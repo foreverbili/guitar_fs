@@ -8,3 +8,7 @@ def index(request):
 
 def detail(request,gtp_id):
     return HttpResponse('兴趣使然的指弹交♂流社区' + gtp_id + request.GET.get('a',gtp_id))
+
+
+def home(request):
+    return render(request,'guitars.html')

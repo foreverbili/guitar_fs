@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-import time
+
 # Create your models here.
 class Users(models.Model):
     name = models.CharField(max_length=32)
@@ -15,4 +15,14 @@ class Users(models.Model):
 class Gtps(models.Model):
     name = models.CharField(max_length=32)
     uper = models.ForeignKey('Users',on_delete=models.CASCADE)
-    #CreateDate = models.DateTimeField(default='2012-1-2 12:00')
+    published_date = models.DateTimeField(blank=True ,null=True)
+    def publish(self):
+        self.published_date = timezone.now
+        self.save()
+    def __str__(self):
+        return self.name
+
+class Comments(models.Model):
+    content = models.CharField(max_length=500)
+    author = models.ForeignKey('Users',on_delete=models.CASCADE)
+    CreateDate = models.DateTimeField(default=timezone.now)
