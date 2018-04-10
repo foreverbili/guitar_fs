@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
     url(r'^register/', views.index_register, name='register'),
+    url(r'^login/', views.index_login, name='login'),
     url(r'^gtpxz/', include('gtpxz.urls')),
 ]

@@ -4,6 +4,7 @@ from . import models
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login
 
+
 # Create your views here.
 
 def detail(request,gtp_id):
@@ -33,7 +34,6 @@ def index_register(request):
             return redirect(to="index")
     content = {}
     content['form']=form
-    content['status']='register'
     return render(request,'gtpxz/gtpxz.html',content)
 
 def index_login(request):
@@ -47,7 +47,6 @@ def index_login(request):
             return HttpResponse("Login Success")
     content = {}
     content['form']=form
-    content['status'] = 'login'
     return render(request,'gtpxz/gtpxz.html',content)
 
 
