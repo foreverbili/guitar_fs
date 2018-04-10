@@ -14,12 +14,10 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'gtpxz/css/bootstrap.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'gtpxz/css/index.css' %}">
 
+
+	<script  src="{% static 'gtpxz/js/jquery.js' %}"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.ui.1.8.21.custom.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.twitter.js' %}"></script>
-	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.anythingslider.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.colorbox-min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.functions.js' %}"></script>
+
 
 	<link rel="stylesheet" type="text/css" href="{% static 'gtpxz/css/colorbox.css' %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'gtpxz/css/anythingslider.css' %}" />
@@ -75,7 +73,7 @@
 					</ul>	
 				</div>				
 			</div>
-            <div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
+            <!--<div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>-->
 			
 			<div id="homepage">
 				<div class="element_big_thumb">
@@ -284,46 +282,84 @@
 			</div>
 			
 		</div>
-
-		<!--zheli-->
-
 	</div>
+
+	<script type="text/javascript" src="{% static 'gtpxz/js/jquery2.2.2.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'gtpxz/js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'gtpxz/js/common.js' %}"></script>
+	<script type="text/javascript" src="{% static 'gtpxz/js/login.js' %}"></script>
+
+	<div>		<!--zheli-->
 		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none;"><div style="display:table; width:100%; height:100%;"><div style="vertical-align:middle; display:table-cell;"><div class="modal-dialog modal-sm" style="width:540px;">
 		<div class="modal-content" style="border: none;">
 			<div class="col-left"></div>
 			<div class="col-right">
 				<div class="modal-header">
 					<button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title" id="loginModalLabel" style="font-size: 18px;">登录</h4>
+					<h4 class="modal-title" id="loginModalLabel" style="font-size: 18px; color:#5ecfba;">登录</h4>
 				</div>
 				<div class="modal-body">
 					<section class="box-login v5-input-txt" id="box-login">
-						<form id="login_form" action="" method="post" autocomplete="off">
-
+						<form  id="login_form" action="" method="post" autocomplete="off" >
 							<ul>
 								<li class="form-group"><input class="form-control" id="id_account_l" maxlength="50" name="account_l" placeholder="请输入邮箱账号/手机号" type="text"></li>
 								<li class="form-group"><input class="form-control" id="id_password_l" name="password_l" placeholder="请输入密码" type="password"></li>
+								{%csrf_token%}
+								</br><button id="login_btn" type="submit" class="btn btn-micv5 btn-block globalLogin">登录</button>
+								</br>
+								<p class="good-tips marginB10"><a id="btnForgetpsw" class="fr">忘记密码？</a>还没有账号？<a target="_blank"  id="btnRegister">立即注册</a></p>
 
 							</ul>
 						</form>
-						<p class="good-tips marginB10"><a id="btnForgetpsw" class="fr">忘记密码？</a>还没有账号？<a href="javascript:;" target="_blank" id="btnRegister">立即注册</a></p>
+						<form id="register_form"  action="" method="post" autocomplete="off" class="hidden">
+							<ul>
+								<li class="form-group"><input class="form-control" id="re_account_l" maxlength="50" name="account_l" placeholder="请输入邮箱账号/手机号" type="text"></li>
+								<li class="form-group"><input class="form-control" id="re_password_l" name="password_l" placeholder="请输入密码" type="password"></li>
+                                <li class="form-group"><input class="form-control" id="co_password_l" name="password_l" placeholder="请确认密码" type="password"></li>
+								{% csrf_token %}
+								<button id="register_btn"  type="submit" class="btn btn-micv5 btn-block globalRegist">注册</button>
+								<p>已有账号，返回<a target="_blank" id="conLogin">继续登录</a></p>
+							</ul>
+						</form>
+						</br>
+
 						<div class="login-box marginB10">
-							<button id="login_btn" type="button" class="btn btn-micv5 btn-block globalLogin">登录</button>
+							<!--<form action="" method="POST">-->
+								<!--{{form.as_p}}-->
+								<!--{%csrf_token%}-->
+								<!--<button id="login_btn" type="submit" class="btn btn-micv5 btn-block globalLogin">登录</button>-->
+								<!--<button id="register_btn"  type="submit" class="hidden">注册</button>-->
+							<!--</form>-->
 							<div id="login-form-tips" class="tips-error bg-danger" style="display: none;">错误提示</div>
 						</div>
 
+						<script>
+							$(document).ready(function () {
 
-						<div class="threeLogin"><span>其他方式登录</span><a class="nqq" href="javascript:;"></a><a class="nwx" href="javascript:;"></a><!--<a class="nwb"></a>--></div>
+								$('#conLogin').click(function(){
+									$('#conLogin').addClass("hidden");
+									$('#login_form').removeClass('hidden');
+									<!--$('#btnRegister').removeClass("globalLogin");-->
+									$('#register_form').addClass('hidden');
+								})
+								$('#btnRegister').click(function(){
+									$('#conLogin').removeClass("hidden");
+									$('#login_form').addClass('hidden');
+									<!--$('#btnRegister').addClass("globalLogin");-->
+									$('#register_form').removeClass('hidden');
+								})
+							});
+						</script>
+
+						<div class="threeLogin"><span>其他方式登录</span><a class="nqq" href="javascript:;"></a><a class="nwx" href="javascript:;"></a><a class="nwb" href="javascript:;"></a></div>
 
 					</section>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="{% static 'gtpxz/js/jquery2.2.2.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'gtpxz/js/bootstrap.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'gtpxz/js/common.js' %}"></script>
-	<script type="text/javascript" src="{% static 'gtpxz/js/login.js' %}"></script>
+
+
 	
 	<div id="footer">
 		<div id="inner_footer">
@@ -372,6 +408,12 @@
 		</div>
 	</div>
 
+
+	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.ui.1.8.21.custom.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.twitter.js' %}"></script>
+	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.anythingslider.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.colorbox-min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.functions.js' %}"></script>
 
 </body>
 </html>

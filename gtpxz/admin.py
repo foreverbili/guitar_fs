@@ -1,26 +1,24 @@
 from django.contrib import admin
-from django.contrib.auth.models import User
-from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from . import models
 
 # Register your models here.
 
-class UsersInline(admin.StackedInline):
-    model = models.Users
-    max_num = 1
-    can_delete = False
 
-class UsersAdmin(BaseUserAdmin):
-    inlines = (UsersInline,)
+class UserAdmin(admin.ModelAdmin):
+    list_display = ['nickname','gender','age','intro','id']
 
-class GtpsAdmin(admin.ModelAdmin):
-    list_display = ['name','uper','published_date']
+class GtpAdmin(admin.ModelAdmin):
+    list_display = ['name','uper','published_date','type']
 
-class CommentsAdmin(admin.ModelAdmin):
+class CommentAdmin(admin.ModelAdmin):
     list_display = ['content','author']
 
+class TypeAdmin(admin.ModelAdmin):
+    list_display = ['type']
 
-admin.site.unregister(User)
-admin.site.register(User,UsersAdmin)
-admin.site.register(models.Gtps,GtpsAdmin)
-admin.site.register(models.Comments,CommentsAdmin)
+
+
+admin.site.register(models.User,UserAdmin)
+admin.site.register(models.Gtp,GtpAdmin)
+admin.site.register(models.Comment,CommentAdmin)
+admin.site.register(models.Type,TypeAdmin)

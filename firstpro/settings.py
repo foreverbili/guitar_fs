@@ -29,8 +29,7 @@ ALLOWED_HOSTS = ['*']
 
 
 # Application definition
-
-AUTH_PROFILE_MODULE = 'gtpxz.Users'
+AUTH_USER_MODEL = 'gtpxz.User'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -40,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gtpxz',
-    'zhihu',
 ]
 
 MIDDLEWARE = [

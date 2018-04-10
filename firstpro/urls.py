@@ -15,14 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
-from zhihu.views import home
 from gtpxz import views
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', home, name='home'),
+    url(r'^$', views.index, name='index'),
     url(r'^register/', views.index_register, name='register'),
     url(r'^gtpxz/', include('gtpxz.urls')),
-    url(r'^zhihu/', include('zhihu.urls'))
 ]
