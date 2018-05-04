@@ -1,53 +1,68 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from . import models
+from blog import models as blgm
+from video import models as vidm
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
-from django.contrib.auth import login
-
+from django.contrib.auth import login,logout
+from django.conf import settings
+from .forms import GtpForm
 
 # Create your views here.
 
-def detail(request,gtp_id):
-    return HttpResponse('兴趣使然的指弹交♂流社区' + gtp_id + request.GET.get('a',gtp_id))
-
-
-def index(request):
-    kmap={}
-    users = models.User.objects.all()
-    kmap['users']=users
-    user_name=request.GET.get('name')
-    if user_name:
-        current_user=models.User.objects.get(name=user_name)
-    elif len(users)>0:
-        current_user=users[0]
-    kmap['current_user']=current_user
-    return render(request,'gtpxz/gtpxz.html',kmap)
-
 def index_register(request):
-    if request.method == "GET":
-        form = UserCreationForm()
     if request.method == "POST":
         form = UserCreationForm(request.POST)
-        print (form.is_valid())
         if form.is_valid():
-            form.save()
+            u = form.save()
+            models.Profile.objects.create(user=u)
             return redirect(to="index")
+    else:
+        form = UserCreationForm()
     content = {}
-    content['form']=form
+    content['form'] = form
     return render(request,'gtpxz/gtpxz.html',content)
 
 def index_login(request):
-    if request.method == "GET":
-        form = AuthenticationForm()
     if request.method == "POST":
         form = AuthenticationForm(data=request.POST)
-        print(form.is_valid(),form.error_messages)
         if form.is_valid():
             login(request,form.get_user())
-            return HttpResponse("Login Success")
+            return redirect(to="index")
+    else:
+        form = AuthenticationForm()
     content = {}
     content['form']=form
     return render(request,'gtpxz/gtpxz.html',content)
+
+def index(request):
+    blogs = blgm.Blog.objects.all().order_by('-id')[:8]
+    vids = vidm.Video.objects.all().order_by('-id')[:8]
+    gtps = models.Gtp.objects.all().order_by('-id')[:8]
+    keymap = {}
+    keymap['blogs'] = blogs
+    keymap['vids'] = vids
+    keymap['gtps'] = gtps
+    return render(request, 'gtpxz/gtpxz.html', keymap)
+
+def index_logout(request):
+    logout(request)
+    return redirect(to="index")
+
+def upload_gtp(request):
+    if request.method == 'POST':
+        # gtp = request.FILES['gtp']
+        form = GtpForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            # gtp_path = '%s/%s' % (settings.MEDIA_ROOT, gtp.name)
+            # with open(gtp_path , 'wb') as f:
+            #     for chunk in gtp.chunks():
+            #         f.write(chunk)
+        return HttpResponse('success')
+    else:
+        form = GtpForm()
+    return render(request, 'gtpxz/upload_gtp.html', {'form': form})
 
 
     # users = models.Users.objects.all()w

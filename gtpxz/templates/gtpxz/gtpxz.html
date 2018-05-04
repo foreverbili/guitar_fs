@@ -1,408 +1,298 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="nl">
-<head>
-	<title>Titel</title>
+{% extends 'gtpxz/base.html' %}
 
-	<meta charset="utf-8" name="ACG音乐" content="ACG音乐" />
-
-	{% load static %}
-
-	<link rel="stylesheet" type="text/css" href="{% static 'gtpxz/css/bootstrap.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'gtpxz/css/index.css' %}">
-
-	<link rel="stylesheet" type="text/css" href="{% static 'gtpxz/css/colorbox.css' %}" />
-	<link rel="stylesheet" type="text/css" href="{% static 'gtpxz/css/anythingslider.css' %}" />
-	<link rel="stylesheet" type="text/css" href="{% static 'gtpxz/css/stylesheet.css' %}" />
+{% block content %}
 
 
-
-
-
-
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
-<body>
-
-	
-	<div id="wrapper">
-		
-		<div id="top">
-			
-			<div id="loga"><a href="#" style="text-decoration:none"><h1>音乐♂二刺螈</h1></a></div>
-
-			<div id="menu">
-				<ul>
-					<li><a href="index.html" class="active">首页</a></li>
-					<li><a href="blog.html">blog</a></li>
-					<li><a href="others.html">others</a></li>
-					<li><a href="contact.html">contact</a></li>
-
-					<li><a href="#" class="a globalLoginBtn">登录</a></li>
-
-
-				</ul>				
-			</div>
-
-		</div>
-
-		<div id="container">
-			
-			<div id="header">
-				<div id="inner_header">
-					<h1>Hello, we make awesome things</h1>
-				</div>
-				<div id="socialmedia">
-					<ul>
-						<li class="twitter">
-							<a class="twitter" href="#"><img class="twitter" src="/static/gtpxz/images/template/icons/icon_twitter_black.png" alt="twitter" /></a>
-						</li>
-						<li class="facebook">
-							<a class="facebook" href="#"><img class="twitter" src="/static/gtpxz/images/template/icons/icon_facebook_black.png" alt="facebook" /></a>
-						</li>
-						<li class="googleplus">
-							<a class="googleplus" href="#"><img class="twitter" src="/static/gtpxz/images/template/icons/icon_googleplus_black.png" alt="googleplus" /></a>
-						</li>						
-					</ul>	
-				</div>				
-			</div>
 
 			<div id="homepage">
 				<div class="element_big_thumb">
-					<a class="colorbox" href="/static/gtpxz/images/homepage/image2.jpg" title="On the Ohoopee as an adult"><img src="/static/gtpxz/images/homepage/image2.jpg" alt="image 1" /></a>
-					<div class="item_overlay">		
-						<div class="buttons"><img class="plus" src="/static/gtpxz/images/template/icons/icon_plus.png" alt="vergroten" /><a href="showcase_case.html"><img class="link" src="/static/gtpxz/images/template/icons/icon_link.png" alt="link" /></a></div>
-					</div>						
+					<a class="colorbox" href="/static/gtpxz/images/homepage/image2.jpg" title="On the Ohoopee as an adult" ><img width=100% height=100% src="/static/gtpxz/images/homepage/image2.jpg" alt="image 1" /></a>
 				</div>
 				<div class="element_thumb">
-					<a class="colorbox" href="/static/gtpxz/images/homepage/6b13328abbbe329bd92c179006a27568.jpg" title="On the Ohoopee as an adult"><img src="/static/gtpxz/images/homepage/image1.jpg" alt="image 1" /></a>
-					<div class="item_overlay">		
-						<div class="buttons"><img class="plus" src="/static/gtpxz/images/template/icons/icon_plus.png" alt="vergroten" /><a href="showcase_case.html"><img class="link" src="/static/gtpxz/images/template/icons/icon_link.png" alt="link" /></a></div>
-					</div>						
+				<ul class="GlobalSideBar-categoryList">
+					<li class="GlobalSideBar-categoryItem">
+						<a class="Button Button--plain" href="/lives" target="_blank" title="话题" style="color:#ffcf00;" type="button">
+							<span class="GlobalSideBar-categoryIcon">
+								<svg class="Zi Zi--Live" fill="currentColor" viewBox="0 0 24 24" width="40" height="40">
+									<path d="M13.693 10.354l1.634-7.542c.195-.901-.16-1.083-.798-.39l-9.18 9.97c-.638.693-.377 1.254.582 1.254h5.376l-1.634 7.542c-.195.901.16 1.083.798.39l9.18-9.97c.638-.693.377-1.254-.582-1.254h-5.376z" data-reactid="847" />
+								</svg>
+							</span>
+							<span class="GlobalSideBar-categoryLabel">话题</span>
+						</a>
+					</li>
+					<li class="GlobalSideBar-categoryItem">
+						<a class="Button Button--plain" href="/pub/" target="_blank" title="收藏" type="button" style="color: rgb(67, 212, 128);">
+							<span class="GlobalSideBar-categoryIcon">
+								<svg class="Zi Zi--Ebook" fill="currentColor" viewBox="0 0 24 24" width="40" height="40">
+									<path d="M16 17.649V2.931a.921.921 0 0 0-.045-.283.943.943 0 0 0-1.182-.604L4.655 5.235A.932.932 0 0 0 4 6.122v14.947c0 .514.421.931.941.931H19.06c.52 0 .941-.417.941-.93V7.292a.936.936 0 0 0-.941-.931h-.773v12.834a.934.934 0 0 1-.83.924L6.464 21.416c-.02.002 2.94-.958 8.883-2.881a.932.932 0 0 0 .653-.886z" fill-rule="evenodd"></path>
+								</svg>
+							</span>
+							<span class="GlobalSideBar-categoryLabel">收藏</span>
+						</a>
+					</li>
+					<li class="GlobalSideBar-categoryItem">
+						<a class="Button Button--plain" href="/roundtable" target="_blank" title="已赞" type="button" style="color: rgb(0, 132, 255);">
+							<span class="GlobalSideBar-categoryIcon">
+								<svg class="Zi Zi--Org" fill="currentColor" viewBox="0 0 24 24" width="40" height="40">
+									<path d="M10.786 8.41a8.938 8.938 0 0 0-3.968-2.528c-.305-1.719.814-3.337 2.442-3.741 1.221-.405 2.646.101 3.46 1.011 1.045 1.38.915 3.64.814 4.348-.102 1.315-1.221 3.034-1.323 3.135-.305-.809-.814-1.517-1.425-2.225zm-2.442 2.832c-1.526.202-3.052 1.01-4.171 2.123-1.12-.404-1.934-1.314-2.137-2.427-.316-2.427 1.526-3.64 2.849-3.842 1.628-.371 2.849.505 4.07 1.415 1.146 1.012 2.035 2.63 2.035 2.73-.916-.202-1.832-.1-2.646 0zm4.986.303c.509-.607.931-1.586 1.12-2.225.318-1.039.61-3.134.203-4.651 1.323-1.011 3.154-1.011 4.477.303 1.235 1.146 1.017 2.933.814 3.438-.663 1.581-1.933 2.326-3.256 2.832-1.221.404-3.256.303-3.358.303zm-2.645 1.011c-.51.607-.916 1.416-1.221 2.326-.407 1.314-.643 3.06-.102 4.55-1.323 1.011-3.256 1.011-4.477-.202-1.198-1.124-1.018-2.932-.814-3.438.599-1.605 1.933-2.326 3.256-2.831.916-.304 3.256-.405 3.358-.405zm9.259-1.82c1.017.404 1.933 1.315 2.035 2.427.233 2.57-1.526 3.64-2.849 3.842-1.526 0-2.85-.505-4.07-1.415-1.018-.81-2.035-2.528-2.035-2.63.916.203 1.831.102 2.645 0 1.628-.404 3.053-1.112 4.274-2.224zm-6.716 4.854c1.065 1.08 2.442 2.022 4.07 2.528.306 1.719-.814 3.235-2.442 3.741-1.22.405-2.645-.101-3.46-1.011-1.1-1.481-1.017-3.54-.915-4.247.102-1.315 1.221-3.034 1.323-3.135.305.708.721 1.44 1.424 2.124z"></path>
+								</svg>
+							</span>
+							<span class="GlobalSideBar-categoryLabel">已赞</span>
+						</a>
+					</li>
+					<li class="GlobalSideBar-categoryItem">
+						<a class="Button Button--plain" href="//zhuanlan.zhihu.com" target="_blank" title="私信" type="button" style="color: rgb(15, 136, 235);">
+							<span class="GlobalSideBar-categoryIcon">
+								<svg class="Zi Zi--Edit" fill="currentColor" viewBox="0 0 24 24" width="40" height="40">
+									<path d="M4.076 16.966a4.19 4.19 0 0 1 1.05-1.76l8.568-8.569a.524.524 0 0 1 .741 0l2.928 2.927a.524.524 0 0 1 0 .74l-8.568 8.57c-.49.49-1.096.852-1.761 1.051l-3.528 1.058a.394.394 0 0 1-.49-.488l1.06-3.53zM20.558 4.83c.59.59.59 1.546 0 2.136l-1.693 1.692a.503.503 0 0 1-.712 0l-2.812-2.812a.504.504 0 0 1 0-.712l1.693-1.693a1.51 1.51 0 0 1 2.135 0l1.389 1.389z"></path>
+								</svg>
+							</span>
+							<span class="GlobalSideBar-categoryLabel">私信</span>
+						</a>
+					</li>
+
+				</ul>
+					</br><hr class="spacer" />
 				</div>
-				<div class="element_thumb">
-					<a class="colorbox" href="/static/gtpxz/images/homepage/575201202448772.jpg" title="On the Ohoopee as an adult"><img src="/static/gtpxz/images/homepage/image3.jpg" alt="image 1" /></a>
-					<div class="item_overlay">		
-						<div class="buttons"><img class="plus" src="/static/gtpxz/images/template/icons/icon_plus.png" alt="vergroten" /><a href="showcase_case.html"><img class="link" src="/static/gtpxz/images/template/icons/icon_link.png" alt="link" /></a></div>
-					</div>						
-				</div>				
 			</div>
-			
-			<div id="content">
-				<div id="information">
-					<h2>Hi there, we are a awesome <span class="orange">creative</span> agency from holland and<br />we are specialized in <span class="orange">illustration</span> work and some other things</h2>
-				</div>
-				
-				<hr class="spacer" />
-				
-				<h2>From the blog</h2>
-				
-								<div id="blog">
-					
-					<ul id="slider">
-						
+
+			<div id="content" >
+
+			<hr class="spacer" />
+
+				<div><h2 style="float:left;">视频区</h2>   <a href="/"><h2 style="float: right;">more</h2></a></div>
+
+				<div class="section" >
+
+					<ul id="slider" style="width:1100px">
+
 						<li>
-					
+
 							<div class="col">
 								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image1.jpg" alt="image1" /></a></div>
 								<div class="col_description">
 									<h3>Image Post Format Still<br />Looking For Him</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur.</p>
-									
-								</div>
-								<div class="col_date">
-										<div class="date"><img class="date" src="/static/gtpxz/images/template/icons/icon_date.png" alt="date" />June 13, 2012</div>
-										<div class="readmore"><a href="blog_comment.html">Read more</a></div>
 								</div>
 							</div>
-							
-							<div class="col even">
+
+							<div class="col">
 								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image2.jpg" alt="image1" /></a></div>
 								<div class="col_description">
 									<h3>The probability of meeting someone</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur.</p>
-									
-								</div>
-								<div class="col_date">
-										<div class="date"><img class="date" src="/static/gtpxz/images/template/icons/icon_date.png" alt="date" />June 13, 2012</div>
-										<div class="readmore"><a href="blog_comment.html">Read more</a></div>
 								</div>
 							</div>
-							
+
 							<div class="col">
 								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image2.jpg" alt="image1" /></a></div>
 								<div class="col_description">
 									<h3>Video Post Format Vimeo The Rocketeer</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur.</p>
-									
-								</div>
-								<div class="col_date">
-										<div class="date"><img class="date" src="/static/gtpxz/images/template/icons/icon_date.png" alt="date" />June 13, 2012</div>
-										<div class="readmore"><a href="blog_comment.html">Read more</a></div>
 								</div>
 							</div>
-							
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image2.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>The probability of meeting someone</h3>
+								</div>
+							</div>
+
 							<div class="clear"></div>
-							
-						</li>
-						
-						<li>
-					
-														<div class="col">
+
+							<div class="col">
 								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image3.jpg" alt="image1" /></a></div>
 								<div class="col_description">
 									<h3>Image Post Format Still<br />Looking For Him</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur.</p>
-									
-								</div>
-								<div class="col_date">
-										<div class="date"><img class="date" src="/static/gtpxz/images/template/icons/icon_date.png" alt="date" />June 13, 2012</div>
-										<div class="readmore"><a href="blog_comment.html">Read more</a></div>
 								</div>
 							</div>
-							
-							<div class="col even">
-								<div class="col_image"><a href="blog_comment.html"></a></div>
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image2.jpg" alt="image1" /></a></div>
 								<div class="col_description">
-									<h3>Image Post Format Still<br />Looking For Him</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur.</p>
-									
-								</div>
-								<div class="col_date">
-										<div class="date"><img class="date" src="/static/gtpxz/images/template/icons/icon_date.png" alt="date" />June 13, 2012</div>
-										<div class="readmore"><a href="blog_comment.html">Read more</a></div>
+									<h3>The probability of meeting someone</h3>
 								</div>
 							</div>
-							
+
 							<div class="col">
 								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image4.jpg" alt="image1" /></a></div>
 								<div class="col_description">
 									<h3>Image Post Format Still<br />Looking For Him</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur.</p>
-									
-								</div>
-								<div class="col_date">
-										<div class="date"><img class="date" src="/static/gtpxz/images/template/icons/icon_date.png" alt="date" />June 13, 2012</div>
-										<div class="readmore"><a href="blog_comment.html">Read more</a></div>
 								</div>
 							</div>
-							
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image2.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>The probability of meeting someone</h3>
+								</div>
+							</div>
+
 							<div class="clear"></div>
-							
-						</li>						
-					
+
+						</li>
+
 					</ul>
 				</div>
-				
-				<h2>Recent work</h2>
-				<div id="recent_work">
-					<div class="col">
-						<div class="col_image"><a href="showcase_case.html"><a href="showcase_case.html"><img src="/static/gtpxz/images/portfolio/image1.jpg" alt="image1" /></a></a></div>
-						<div class="col_description">
-							<h3><a href="showcase_case.html">All the Signs</a></h3>
-							<p>Lorem ipsum dolor sit amet, consectetur.</p>
-						</div>	
-					</div>
-					
-					<div class="col even">
-						<div class="col_image"><a href="showcase_case.html"><a href="showcase_case.html"><img src="/static/gtpxz/images/portfolio/image2.jpg" alt="image1" /></a></a></div>
-						<div class="col_description">
-							<h3><a href="showcase_case.html">Hellboy</a></h3>
-							<p>Lorem ipsum dolor sit amet, consectetur.</p>
-						</div>	
-					</div>
-					
-					<div class="clear"></div>
+
+			</br><hr class="spacer" />
+
+				<h2>乐谱区</h2>
+
+				<div class="section" >
+
+					<ul id="slider" style="width:1100px">
+
+						<li>
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image1.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>{{ gtps.0 }}</h3>
+								</div>
+							</div>
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image2.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>{{ gtps.1 }}</h3>
+								</div>
+							</div>
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image2.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>{{ gtps.2 }}</h3>
+								</div>
+							</div>
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image2.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>{{ gtps.3 }}</h3>
+								</div>
+							</div>
+
+							<div class="clear"></div>
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image3.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>{{ gtps.4 }}</h3>
+								</div>
+							</div>
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image2.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>{{ gtps.5 }}</h3>
+								</div>
+							</div>
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image4.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>{{ gtps.6 }}</h3>
+								</div>
+							</div>
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image2.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>{{ gtps.7 }}</h3>
+								</div>
+							</div>
+
+							<div class="clear"></div>
+
+						</li>
+
+					</ul>
 				</div>
-				
-				<hr class="spacer" />
-				
-				<div id="comments">
-					<div class="col">
-						<h2>Popular comments</h2>
-						<div class="comment">
-							<div class="comment_image"><img src="/static/gtpxz/images/avatar/avatar1.jpg" alt="avatar" /></div>
-							<div class="comment_description">
-								<p>Image Post Format Still Looking For Him
-								Etiam tempor lorem sit amet odio luctus in tempor dui placerat. 
-								Suspendisse in sapien sem, dictum volutpat odio.</p> 
-								<p><span class="bold">August 22, 2012 By Peter</span></p>
+
+
+			</br><hr class="spacer" />
+
+				<h2>讨论区</h2>
+
+				<div class="section" >
+
+					<ul id="slider" style="width:1100px">
+
+						<li>
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image1.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>{{blogs.0}}</h3>
+								</div>
 							</div>
-							<div class="clear"></div>
-						</div>
-						
-						<div class="comment">
-							<div class="comment_image"><img src="/static/gtpxz/images/avatar/avatar2.jpg" alt="avatar" /></div>
-							<div class="comment_description">
-								<p>Image Post Format Still Looking For Him
-								Etiam tempor lorem sit amet odio luctus in tempor dui placerat. 
-								Suspendisse in sapien sem, dictum volutpat odio.</p> 
-								<p><span class="bold">August 22, 2012 By Peter</span></p>
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image2.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>{{blogs.1}}</h3>
+								</div>
 							</div>
-							<div class="clear"></div>
-						</div>
-					</div>
-					
-					<div class="col even">
-						<h2>Testimonials</h2>
-						<div class="comment">
-							<div class="comment_image"><img src="/static/gtpxz/images/avatar/avatar3.jpg" alt="avatar" /></div>
-							<div class="comment_description">
-								<p>Image Post Format Still Looking For Him
-								Etiam tempor lorem sit amet odio luctus in tempor dui placerat. 
-								Suspendisse in sapien sem, dictum volutpat odio.</p> 
-								<p><span class="bold">August 22, 2012 By Peter</span></p>
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image2.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>{{blogs.2}}{{blogs.0}}</h3>
+								</div>
 							</div>
-							<div class="clear"></div>
-						</div>
-						
-						<div class="comment">
-							<div class="comment_image"><img src="/static/gtpxz/images/avatar/avatar4.jpg" alt="avatar" /></div>
-							<div class="comment_description">
-								<p>Image Post Format Still Looking For Him
-								Etiam tempor lorem sit amet odio luctus in tempor dui placerat. 
-								Suspendisse in sapien sem, dictum volutpat odio.</p> 
-								<p><span class="bold">August 22, 2012 By Peter</span></p>
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image2.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>{{blogs.3}}</h3>
+								</div>
 							</div>
+
 							<div class="clear"></div>
-						</div>						
-					</div>
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image3.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>{{blogs.4}}</h3>
+								</div>
+							</div>
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image2.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>{{blogs.5}}</h3>
+								</div>
+							</div>
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image4.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>{{blogs.6}}</h3>
+								</div>
+							</div>
+
+							<div class="col">
+								<div class="col_image"><a href="blog_comment.html"><img src="/static/gtpxz/images/blog/image2.jpg" alt="image1" /></a></div>
+								<div class="col_description">
+									<h3>{{ blogs.7 }}</h3>
+								</div>
+							</div>
+
+							<div class="clear"></div>
+
+						</li>
+
+					</ul>
 				</div>
-				
+
+
+			</br><hr class="spacer" />
+
 				<div class="clear"></div>
-				
+
 			</div>
-			
-		</div>
-
-	</div>
-
-	
-	<div id="footer">
-		<div id="inner_footer">
-			<div class="col">
-				<h4 class="latesttweets">Latest tweets</h4>
-				<div id="tweets"></div>
-			</div>
-			<div class="col even">
-				<h4 class="video">Video</h4>
-							
-			</div>
-			<div class="col">
-				<h4 class="aboutus">About us</h4>
-				<p>Nam id sapien lacus, eu volutpat 
-				Suspendisse accumsan posuere 
-				pulvinar urabitur quis tincit curabitur interdum mattis ligula ut.</p>
-				
-				<p>Rn at augue a tortor sagittis tristique. Aenean leo nisi, aliquam vestibulum lacinia vitae, tincidunt ac tellus.</p>
-			</div>
-			<div class="col last">
-				<h4 class="flickr">Flickr</h4>
-				<div class="photo top"><a href="#"><img src="/static/gtpxz/images/flickr/image1.jpg" alt="flickr 1" /><div class="overlay_flickr"></div></a></div>
-				<div class="photo top even"><a href="#"><img src="/static/gtpxz/images/flickr/image2.jpg" alt="flickr 1" /><div class="overlay_flickr"></div></a></div>
-				<div class="photo top"><a href="#"><img src="/static/gtpxz/images/flickr/image3.jpg" alt="flickr 1" /><div class="overlay_flickr"></div></a></div>
-				
-				<div class="clear"></div>
-				
-				<div class="photo"><a href="#"><img src="/static/gtpxz/images/flickr/image4.jpg" alt="flickr 1" /><div class="overlay_flickr"></div></a></div>
-				<div class="photo even"><a href="#"><img src="/static/gtpxz/images/flickr/image5.jpg" alt="flickr 1" /><div class="overlay_flickr"></div></a></div>
-				<div class="photo"><a href="#"><img src="/static/gtpxz/images/flickr/image6.jpg" alt="flickr 1" /><div class="overlay_flickr"></div></a></div>
-			</div>
-			<div class="clear"></div>
-		</div>
-	</div>
-	
-	<div id="copyright">
-		<div id="inner_copyright">
-			&copy; Copyright &copy; 2013.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
-			<ul>
-				<li><a href="#" class="active">home</a></li>
-				<li><a href="#">showcase</a></li>
-				<li><a href="#">blog</a></li>
-				<li><a href="#">others</a></li>
-				<li><a href="#">contact</a></li>					
-			</ul>				
-		</div>
-	</div>
-
-
-	<!--登录注册模块在这里-->
-	<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
-	<!--<script type="text/javascript" src="{% static 'gtpxz/js/jquery2.2.2.min.js' %}"></script>-->
-	<script type="text/javascript" src="{% static 'gtpxz/js/bootstrap.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'gtpxz/js/common.js' %}"></script>
-	<script type="text/javascript" src="{% static 'gtpxz/js/login.js' %}"></script>
-
-	<div>
-		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none;"><div style="display:table; width:100%; height:100%;"><div style="vertical-align:middle; display:table-cell;"><div class="modal-dialog modal-sm" style="width:540px;">
-		<div class="modal-content" style="border: none;">
-			<div class="col-left"></div>
-			<div class="col-right">
-				<div class="modal-header">
-					<button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title" id="loginModalLabel" style="font-size: 18px; color:#5ecfba;">登录</h4>
-				</div>
-				<div class="modal-body">
-					<section class="box-login v5-input-txt" id="box-login">
-						<form  id="login_form" action="/login/" method="post" autocomplete="off" >
-							<ul>
-								<li class="form-group"><input class="form-control" id="id_account_l" maxlength="50" name="account_l" placeholder="请输入邮箱账号/手机号" type="text"></li>
-								<li class="form-group"><input class="form-control" id="id_password_l" name="password_l" placeholder="请输入密码" type="password"></li>
-								{%csrf_token%}
-								</br><button id="login_btn" type="submit" class="btn btn-micv5 btn-block globalLogin">登录</button>
-								</br>
-								<p class="good-tips marginB10"><a id="btnForgetpsw" class="fr">忘记密码？</a>还没有账号？<a target="_blank"  id="btnRegister">立即注册</a></p>
-
-							</ul>
-						</form>
-						<form id="register_form"  action="/register/" method="post" autocomplete="off" class="hidden">
-							<ul>
-								<li class="form-group"><input class="form-control" id="re_account_l" maxlength="50" name="account_l" placeholder="请输入邮箱账号/手机号" type="text"></li>
-								<li class="form-group"><input class="form-control" id="re_password_l" name="password_l" placeholder="请输入密码" type="password"></li>
-                                <li class="form-group"><input class="form-control" id="co_password_l" name="password_l" placeholder="请确认密码" type="password"></li>
-								{% csrf_token %}
-								<button id="register_btn"  type="submit" class="btn btn-micv5 btn-block globalRegist">注册</button>
-								<p>已有账号，返回<a target="_blank" id="conLogin">继续登录</a></p>
-							</ul>
-						</form>
-						</br>
-
-						<div class="login-box marginB10">
-							<div id="login-form-tips" class="tips-error bg-danger" style="display: none;">错误提示</div>
-						</div>
-
-						<script>
-							$(document).ready(function () {
-
-								$('#conLogin').click(function(){
-									$('#conLogin').addClass("hidden");
-									$('#login_form').removeClass('hidden');
-									<!--$('#btnRegister').removeClass("globalLogin");-->
-									$('#register_form').addClass('hidden');
-								})
-								$('#btnRegister').click(function(){
-									$('#conLogin').removeClass("hidden");
-									$('#login_form').addClass('hidden');
-									<!--$('#btnRegister').addClass("globalLogin");-->
-									$('#register_form').removeClass('hidden');
-								})
-							});
-						</script>
-
-						<div class="threeLogin"><span>其他方式登录</span><a class="nqq" href="javascript:;"></a><a class="nwx" href="javascript:;"></a><a class="nwb" href="javascript:;"></a></div>
-
-					</section>
-				</div>
-			</div>
-		</div>
-	</div>
 
 
 
-	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.ui.1.8.21.custom.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.twitter.js' %}"></script>
-	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.anythingslider.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.colorbox-min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.functions.js' %}"></script>
 
-</body>
-</html>
+
+{% endblock %}

@@ -23,5 +23,8 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^register/', views.index_register, name='register'),
     url(r'^login/', views.index_login, name='login'),
-    url(r'^gtpxz/', include('gtpxz.urls')),
+    url(r'^logout/', views.index_logout, name='logout'),
+    url(r'^gtp/', include('gtpxz.urls')),
+    url(r'^blog/', include('blog.urls')),
+    url(r'^video/', include('video.urls')),
 ]

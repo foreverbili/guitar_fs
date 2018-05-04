@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl">
+
+<head>
+
+	<title>音乐♂二刺螈</title>
+
+	<meta charset="utf-8" />
+	<meta name="keywords" content="keywords" />
+	<meta name="description" content="description" />
+	<meta name="robots" content="noindex, nofollow" />
+
+
+	{% load static %}
+
+	<link rel="stylesheet" type="text/css" href="{% static 'gtpxz/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'gtpxz/css/index.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'gtpxz/css/colorbox.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'gtpxz/css/anythingslider.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'gtpxz/css/newstyle.css' %}" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+</head>
+
+<body class="blog">
+	<div id="wrapper">
+		<div id="top">
+
+			<div id="loga"><a href="/" style="text-decoration:none"><h1>音乐♂二刺螈</h1></a></div>
+
+			<div id="menu">
+				<ul>
+					{% if user.is_authenticated %}
+						<li><a href="blog.html">我的文章</a></li>
+						<li><a href="others.html">我的谱子</a></li>
+						<li><a href="contact.html">我的视频</a></li>
+						<li><a href="contact.html">发表</a></li>
+						<li>
+							<button type="button" class="btn dropdown-toggle" id="dropdownMenu1"  data-toggle="dropdown">{{ user.profile.nickname }}
+							<span class="caret"></span>
+							</button>
+
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" style="left:360px; width:120px; min-width:100px;background-color:#5ecfba;">
+
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#" style="height:25px;padding:6px 0px;margin-left:-10px">修改资料</a>
+								</li>
+								<li role="presentation">
+									<a href="/logout/" role="menuitem" tabindex="-1" href="#" style="height:25px;padding:8px 0px;margin-left:-10px">注销登录</a>
+								</li>
+
+							</ul>
+
+						</li>
+					{% else %}
+						<li><a href="#" class="a globalLoginBtn">登录/注册</a></li>
+					{% endif %}
+
+				</ul>
+
+			</div>
+
+		</div>
+		<div id="container">
+			<div id="header">
+				<div id="inner_header">
+					<h1>
+						<ul class="nav navbar-nav"  >
+							<li >
+								<a href="/" >主站</a>
+							</li>
+							<li >
+								<a href="#">视频区</a>
+							</li>
+							<li >
+								<a href="#">乐谱区</a>
+							</li>
+							<li >
+								<a href="#">讨论区</a>
+							</li>
+						</ul>
+					</h1>
+				</div>
+			</div>
+		{% block content %}
+		{% endblock %}
+		</div>
+	</div>
+
+	<div id="footer">
+		<div id="inner_footer">
+			<div class="col">
+				<h4 class="latesttweets">Latest tweets</h4>
+				<div id="tweets"></div>
+			</div>
+			<div class="col even">
+				<h4 class="video">Video</h4>
+
+			</div>
+			<div class="col">
+				<h4 class="aboutus">About us</h4>
+				<p>Nam id sapien lacus, eu volutpat
+				Suspendisse accumsan posuere
+				pulvinar urabitur quis tincit curabitur interdum mattis ligula ut.</p>
+
+				<p>Rn at augue a tortor sagittis tristique. Aenean leo nisi, aliquam vestibulum lacinia vitae, tincidunt ac tellus.</p>
+			</div>
+			<div class="col last">
+				<h4 class="flickr">Flickr</h4>
+				<div class="photo top"><a href="#"><img src="/static/gtpxz/images/flickr/image1.jpg" alt="flickr 1" /><div class="overlay_flickr"></div></a></div>
+				<div class="photo top even"><a href="#"><img src="/static/gtpxz/images/flickr/image2.jpg" alt="flickr 1" /><div class="overlay_flickr"></div></a></div>
+				<div class="photo top"><a href="#"><img src="/static/gtpxz/images/flickr/image3.jpg" alt="flickr 1" /><div class="overlay_flickr"></div></a></div>
+
+				<div class="clear"></div>
+
+				<div class="photo"><a href="#"><img src="/static/gtpxz/images/flickr/image4.jpg" alt="flickr 1" /><div class="overlay_flickr"></div></a></div>
+				<div class="photo even"><a href="#"><img src="/static/gtpxz/images/flickr/image5.jpg" alt="flickr 1" /><div class="overlay_flickr"></div></a></div>
+				<div class="photo"><a href="#"><img src="/static/gtpxz/images/flickr/image6.jpg" alt="flickr 1" /><div class="overlay_flickr"></div></a></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+	<!--登录注册模块在这里-->
+    {% load static %}
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="{% static 'gtpxz/js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'gtpxz/js/common.js' %}"></script>
+	<script type="text/javascript" src="{% static 'gtpxz/js/login.js' %}"></script>
+	<div>
+		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none;"><div style="display:table; width:100%; height:100%;"><div style="vertical-align:middle; display:table-cell;"><div class="modal-dialog modal-sm" style="width:540px;">
+		<div class="modal-content" style="border: none;">
+			<div class="col-left"></div>
+			<div class="col-right">
+				<div class="modal-header">
+					<button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="loginModalLabel" style="font-size: 18px; color:#5ecfba;">登录</h4>
+				</div>
+				<div class="modal-body">
+					<section class="box-login v5-input-txt" id="box-login">
+						<form  id="login_form" action="/login/" method="post" autocomplete="off" >
+							{% csrf_token %}
+							<ul>
+								<li class="form-group"><input class="form-control" id="id_account_l" maxlength="50" name="username" placeholder="请输入邮箱账号/手机号" type="text" /></li>
+								<li class="form-group"><input class="form-control" id="id_password_l" name="password" placeholder="请输入密码" type="password" /></li>
+								</br><button id="login_btn" type="submit" class="btn btn-micv5 btn-block globalLogin">登录</button>
+								</br>
+								<p class="good-tips marginB10"><a id="btnForgetpsw" class="fr">忘记密码？</a>还没有账号？<a target="_blank"  id="btnRegister">立即注册</a></p>
+							</ul>
+
+
+						</form>
+						<form id="register_form"  action="/register/" method="post" autocomplete="off" class="hidden">
+							{% csrf_token %}
+							<ul>
+								<li class="form-group"><input class="form-control" id="re_account_l" maxlength="50" name="username" placeholder="请输入邮箱账号/手机号" type="text"></li>
+								<li class="form-group"><input class="form-control" id="re_password_l" name="password1" placeholder="请输入密码" type="password"></li>
+                                <li class="form-group"><input class="form-control" id="co_password_l" name="password2" placeholder="请确认密码" type="password"></li>
+								<button id="register_btn"  type="submit" class="btn btn-micv5 btn-block globalRegist">注册</button>
+								<p>已有账号，返回<a target="_blank" id="conLogin">继续登录</a></p>
+							</ul>
+						</form>
+						</br>
+
+						<div class="login-box marginB10">
+							<div id="login-form-tips" class="tips-error bg-danger" style="display: none;">错误提示</div>
+						</div>
+
+						<script>
+							$(document).ready(function () {
+
+								$('#conLogin').click(function(){
+									$('#conLogin').addClass("hidden");
+									$('#login_form').removeClass('hidden');
+									<!--$('#btnRegister').removeClass("globalLogin");-->
+									$('#register_form').addClass('hidden');
+								})
+								$('#btnRegister').click(function(){
+									$('#conLogin').removeClass("hidden");
+									$('#login_form').addClass('hidden');
+									<!--$('#btnRegister').addClass("globalLogin");-->
+									$('#register_form').removeClass('hidden');
+								})
+							});
+						</script>
+
+						<div class="threeLogin"><span>其他方式登录</span><a class="nqq" href="javascript:;"></a><a class="nwx" href="javascript:;"></a><a class="nwb" href="javascript:;"></a></div>
+
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.ui.1.8.21.custom.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.twitter.js' %}"></script>
+	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.anythingslider.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.colorbox-min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'gtpxz/js/jquery.functions.js' %}"></script>
+</body>
+
+</html>
+
+
